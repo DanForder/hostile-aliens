@@ -1,9 +1,6 @@
 class Ship {
   constructor() {
-    // this._hitpoints;
-    // this._damageLoss;
     this._isAlive = true;
-    // this._shipType;
   }
   get takeDamage() {
     this._hitpoints -= this._damageLoss;
@@ -56,11 +53,7 @@ function makeShips(motherShips, defenceShips, attackShips) {
 function convertShipsToHTML() {
   let str = "";
   shipArray.forEach(ship => {
-    if (!ship._isAlive) {
-      str += `<p id="ship">${ship._shipType} : DEAD</p>`;
-    } else {
-      str += `<p id="ship">${ship._shipType} : ${ship._hitpoints}</p>`;
-    }
+    !ship._isAlive ? (str += `<p id="ship">${ship._shipType} : DEAD</p>`) : (str += `<p id="ship">${ship._shipType} : ${ship._hitpoints}</p>`);
     HTMLShipContainer.innerHTML = str;
   });
 }
@@ -70,11 +63,9 @@ function fire() {
   let randomArrayIndex = Math.floor(Math.random() * filteredArray.length);
   filteredArray[randomArrayIndex].takeDamage;
   filteredArray[randomArrayIndex].checkAlive;
-  if (filteredArray[randomArrayIndex]._shipType === "Mother Ship" && !filteredArray[randomArrayIndex]._isAlive) {
-    killAll();
-  }
+  if (filteredArray[randomArrayIndex]._shipType === "Mother Ship" && !filteredArray[randomArrayIndex]._isAlive) killAll();
   convertShipsToHTML();
-  if(filterDeadShips().length === 0){
+  if (filterDeadShips().length === 0) {
     winGame();
   }
 }
@@ -90,15 +81,21 @@ function killAll() {
   convertShipsToHTML();
 }
 
-function winGame(){
-    HTMLdescription.innerHTML = "You've killed all the innocent aliens! Play again?";
+function winGame() {
+  HTMLdescription.innerHTML = "You've killed all the innocent aliens! Play again?";
+  button.innerHTML = "Reset";
+  button.removeAttribute("onclick");
+  button.setAttribute("onclick","reset()");
 }
 
-function reset(){
-    HTMLdescription.innerHTML = "The aliens are here! Can you save the world?";
-    shipArray = [];
-    makeShips(numOfMotherShips,numOfDefenceShips,numOfAttackShips);
-    convertShipsToHTML();
+function reset() {
+  HTMLdescription.innerHTML = "The aliens are here! Can you save the world?";
+  shipArray = [];
+  button.innerHTML = "FIRE!";
+  button.removeAttribute("onclick");
+  button.setAttribute("onclick","fire()");
+  makeShips(numOfMotherShips, numOfDefenceShips, numOfAttackShips);
+  convertShipsToHTML();
 }
 const numOfMotherShips = 1;
 const numOfDefenceShips = 5;
@@ -106,6 +103,7 @@ const numOfAttackShips = 8;
 
 const HTMLShipContainer = document.getElementById("ship-container");
 const HTMLdescription = document.getElementById("description");
+const button = document.getElementById("fire");
 
 let shipArray = [];
 

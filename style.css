@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#ship-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-height: 50vh;
+}
+
+#ship {
+  margin: 2%;
+}
+
+#player-container {
+  position: absolute;
+  bottom: 25vh;
+}

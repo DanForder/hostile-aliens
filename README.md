@@ -1,8 +1,23 @@
-# hostile-aliens
+## Hostile Aliens
+### Overview
+A tech test style brief given to us on week 4 of the _nology front-end coding bootcamp. The task was to create a simple text-only game with a single button that hits a random alien ship in the fleet. Each time the button is pressed, a random alien ship is hit and its hit points are reduced. Once an alien ships points have hit zero the ship is destroyed and can’t be hit again. The game is over once all alien ships have been destroyed.
 
-Completed in 2 hours with a brief of making a text-based alien invasion style game.
-Requirements included using <150 lines of code, specifics about different styles and behaviours of ships.
-When the mother ship is destroyed, the game is won.
-Using basic HTML, CSS, and vanilla Javascript.
+### The Brief
+- You should be able to start a new game once the game is over.
+- Some text visualisation of the ships and their hit points.
+- Use 150 lines of code or fewer, all on one HTML file
+- When the mother ship is destroyed, the game is won
+- You have 2 hours
 
-This was achieved after 4 weeks of my _nology course.
+### Tech Used
+- HTML
+- CSS
+- Javascript
+
+### Current State
+- Users can wrestle on the keyboard to move the rope closer to their side of the screen
+- Responsive to small and large screens
+
+### How to
+- Clone the repo
+- Run a live server on index.html

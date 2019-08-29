@@ -18,6 +18,6 @@ A tech test style brief given to us on week 4 of the _nology front-end coding bo
 - Users can wrestle on the keyboard to move the rope closer to their side of the screen
 - Responsive to small and large screens
 
-### How to
+### How-to
 - Clone the repo
 - Run a live server on index.html

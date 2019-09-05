@@ -17,7 +17,7 @@ View the application live [here](http://hostilealiens.dforder.com)
 - Javascript
 
 ### Current State
-- Users can wrestle on the keyboard to move the rope closer to their side of the screen
+- User can press a fire button, randomly damaging an alien ship
 - Responsive to small and large screens
 
 ### How-to
